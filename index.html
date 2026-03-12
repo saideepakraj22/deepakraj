@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Deepak Raj Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Sai Deepak Raj</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Photography by Sai Deepak Raj</h1>
+            <p>Capturing beautiful moments through my lens</p>
+            <a href="#gallery" class="btn btn-primary">View Gallery</a>
+        </div>
+    </section>
+
+    <!-- Categories Filter -->
+    <section class="categories">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="street">Street Photography</button>
+        <button class="filter-btn" data-filter="sunset">Sunset</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-container">
+            <!-- Photo 1: Nature -->
+            <div class="gallery-item" data-category="nature">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nature">
+                    <div class="overlay">
+                        <h3>Mountain Mist</h3>
+                        <p>₹299</p>
+                        <button class="btn btn-buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo 2: Street -->
+            <div class="gallery-item" data-category="street">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1449824913929-2b3a3e54da63?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Street">
+                    <div class="overlay">
+                        <h3>City Lights</h3>
+                        <p>₹199</p>
+                        <button class="btn btn-buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo 3: Sunset -->
+            <div class="gallery-item" data-category="sunset">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9d869?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sunset">
+                    <div class="overlay">
+                        <h3>Golden Hour</h3>
+                        <p>₹499</p>
+                        <button class="btn btn-buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo 4: Travel -->
+            <div class="gallery-item" data-category="travel">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Travel">
+                    <div class="overlay">
+                        <h3>Swiss Alps</h3>
+                        <p>₹399</p>
+                        <button class="btn btn-buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo 5: Nature -->
+            <div class="gallery-item" data-category="nature">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1501854140884-074cf2b21d25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nature">
+                    <div class="overlay">
+                        <h3>Deep Forest</h3>
+                        <p>₹299</p>
+                        <button class="btn btn-buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo 6: Sunset -->
+            <div class="gallery-item" data-category="sunset">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sunset">
+                    <div class="overlay">
+                        <h3>Alpine Lake</h3>
+                        <p>₹499</p>
+                        <button class="btn btn-buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Hi, I am Sai Deepak Raj, a passionate photographer who loves capturing beautiful moments through my camera. This website shows my best photography work. I strive to turn fleeting moments into timeless memories.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-links">
+            <a href="mailto:sai@example.com" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <span>Email Me</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="contact-card">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank" class="contact-card whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Sai Deepak Raj Photography. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
