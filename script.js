@@ -24,24 +24,32 @@ photo.style.display = "none";
 });
 
 });
-// Like Button
+// Like system with counter
 
-document.querySelectorAll(".like-btn").forEach(btn => {
+document.querySelectorAll(".photo-card").forEach((card,index)=>{
 
-btn.addEventListener("click", () => {
+let likeBtn = card.querySelector(".like-btn");
+let countSpan = card.querySelector(".like-count");
 
-btn.classList.toggle("liked");
+let savedLikes = localStorage.getItem("photoLikes"+index);
 
-if(btn.classList.contains("liked")){
-btn.innerHTML="💖";
-}else{
-btn.innerHTML="❤️";
+if(savedLikes){
+countSpan.innerText = savedLikes;
 }
 
-});
+likeBtn.addEventListener("click",()=>{
+
+let count = parseInt(countSpan.innerText);
+
+count++;
+
+countSpan.innerText = count;
+
+localStorage.setItem("photoLikes"+index,count);
 
 });
 
+});
 
 // Lightbox Photo Viewer
 
