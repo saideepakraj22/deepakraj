@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,18 +27,16 @@
 <div class="logo">Sai Deepak Raj</div>
 
 <ul class="nav-links">
-
 <li><a href="#home">Home</a></li>
 <li><a href="#gallery">Gallery</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
 
 </nav>
 
 
-<!-- Home Section -->
+<!-- Hero -->
 
 <section id="home" class="hero">
 
@@ -45,7 +45,6 @@
 <div class="hero-content">
 
 <h1>Photography by Sai Deepak Raj</h1>
-
 <p>Capturing beautiful moments through my lens</p>
 
 <a href="#gallery" class="btn btn-primary">View Gallery</a>
@@ -74,55 +73,117 @@
 
 <div class="gallery-container">
 
+<!-- Photo 1 -->
+
 <div class="photo-card" data-category="nature">
-<img src="image1.jpeg" alt="Nature">
+
+<img src="image1.jpeg" alt="Nature" class="gallery-img">
+
 <h3 class="photo-name">Nature Beauty</h3>
+
 <p>₹299</p>
+
+<div class="photo-actions">
+<button class="like-btn">❤️</button>
 <button class="btn btn-buy" onclick="buyPhoto(this)">Buy Now</button>
 </div>
+
+</div>
+
+
+<!-- Photo 2 -->
 
 <div class="photo-card" data-category="street">
-<img src="beach.jpeg" alt="Beach">
+
+<img src="beach.jpeg" alt="Beach" class="gallery-img">
+
 <h3 class="photo-name">Beach View</h3>
+
 <p>₹199</p>
+
+<div class="photo-actions">
+<button class="like-btn">❤️</button>
 <button class="btn btn-buy" onclick="buyPhoto(this)">Buy Now</button>
 </div>
 
+</div>
+
+
+<!-- Photo 3 -->
+
 <div class="photo-card" data-category="sunset">
-<img src="image2.jpeg" alt="Sunset">
+
+<img src="image2.jpeg" alt="Sunset" class="gallery-img">
+
 <h3 class="photo-name">Golden Sunset</h3>
+
 <p>₹399</p>
+
+<div class="photo-actions">
+<button class="like-btn">❤️</button>
 <button class="btn btn-buy" onclick="buyPhoto(this)">Buy Now</button>
 </div>
+
+</div>
+
+
+<!-- Photo 4 -->
 
 <div class="photo-card" data-category="travel">
-<img src="image3.jpeg" alt="Travel">
+
+<img src="image3.jpeg" alt="Travel" class="gallery-img">
+
 <h3 class="photo-name">Travel View</h3>
+
 <p>₹499</p>
+
+<div class="photo-actions">
+<button class="like-btn">❤️</button>
 <button class="btn btn-buy" onclick="buyPhoto(this)">Buy Now</button>
 </div>
+
+</div>
+
+
+<!-- Photo 5 -->
 
 <div class="photo-card" data-category="sunset">
-<img src="image4.jpeg" alt="Sunset">
+
+<img src="image4.jpeg" alt="Sunset" class="gallery-img">
+
 <h3 class="photo-name">Evening Sunset</h3>
+
 <p>₹349</p>
+
+<div class="photo-actions">
+<button class="like-btn">❤️</button>
 <button class="btn btn-buy" onclick="buyPhoto(this)">Buy Now</button>
 </div>
 
 </div>
 
-</section>
-  <div class="photo-card" data-category="sunset">
 
-<img src="sunset-street.jpeg" alt="Street Sunset">
+<!-- Photo 6 -->
+
+<div class="photo-card" data-category="sunset">
+
+<img src="sunset-street.jpeg" alt="Street Sunset" class="gallery-img">
 
 <h3 class="photo-name">Street Sunset</h3>
 
 <p>₹199</p>
 
+<div class="photo-actions">
+<button class="like-btn">❤️</button>
 <button class="btn btn-buy" onclick="buyPhoto(this)">Buy Now</button>
+</div>
 
 </div>
+
+
+</div>
+
+</section>
 
 
 <!-- About -->
@@ -134,11 +195,8 @@
 <h2>About Me</h2>
 
 <p>
-
-Hi, I am Sai Deepak Raj, a passionate photographer who loves capturing beautiful moments through my camera. 
-
+Hi, I am Sai Deepak Raj, a passionate photographer who loves capturing beautiful moments through my camera.  
 This website shows my best photography work. I strive to turn fleeting moments into timeless memories.
-
 </p>
 
 </div>
@@ -154,31 +212,19 @@ This website shows my best photography work. I strive to turn fleeting moments i
 
 <div class="contact-links">
 
-<a href="mailto:saideepakraj22@gmail.com"
-  class="contact-card">
-
+<a href="mailto:saideepakraj22@gmail.com" class="contact-card">
 <i class="fas fa-envelope"></i>
-
 <span>Email Me</span>
-
 </a>
-
 
 <a href="https://www.instagram.com/saideepakraj_gajwinkar" target="_blank" class="contact-card">
-
 <i class="fab fa-instagram"></i>
-
 <span>Instagram</span>
-
 </a>
 
-
 <a href="https://wa.me/918074158967" target="_blank" class="contact-card whatsapp">
-
 <i class="fab fa-whatsapp"></i>
-
 <span>WhatsApp</span>
-
 </a>
 
 </div>
@@ -189,23 +235,26 @@ This website shows my best photography work. I strive to turn fleeting moments i
 <!-- Footer -->
 
 <footer>
-
 <p>© 2026 Sai Deepak Raj Photography. All rights reserved.</p>
-
 </footer>
 
 
-<!-- Floating WhatsApp Button -->
+<!-- Lightbox -->
+
+<div id="lightbox" class="lightbox">
+<span class="close">&times;</span>
+<img class="lightbox-img">
+</div>
+
+
+<!-- Floating WhatsApp -->
 
 <a href="https://wa.me/918074158967" class="whatsapp-float" target="_blank">
-
 <i class="fab fa-whatsapp"></i>
-
 </a>
 
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
