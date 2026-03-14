@@ -20,8 +20,6 @@
 
 <body>
 
-<!-- Navigation -->
-
 <nav class="navbar">
 
 <div class="logo">Sai Deepak Raj</div>
@@ -35,7 +33,6 @@
 
 </nav>
 
-<!-- Hero -->
 
 <section id="home" class="hero">
 
@@ -52,7 +49,6 @@
 
 </section>
 
-<!-- Categories -->
 
 <section class="categories">
 
@@ -64,173 +60,94 @@
 
 </section>
 
-<!-- Gallery -->
 
 <section id="gallery" class="gallery-section">
 
 <div class="gallery-container">
 
-<!-- Photo 1 -->
 
-<div class="photo-card" data-category="nature">
+<div class="photo-card">
 
-<img src="image1.jpeg" alt="Nature" class="gallery-img">
+<img src="image1.jpeg" class="gallery-img">
 
-<h3 class="photo-name">Nature Beauty</h3>
+<h3>Nature Beauty</h3>
 
 <p>₹299</p>
 
-<div class="photo-actions">
-
-<button class="like-btn">❤️ <span class="like-count">0</span></button>
-
-<a href="upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am=299&cu=INR">
-<button class="btn btn-buy">Buy Now</button>
-</a>
-
-<a href="image1.jpeg" download>
-<button class="btn">Download</button>
-</a>
+<button class="btn" onclick="openPayment('image1.jpeg',299)">Download</button>
 
 </div>
 
-</div>
 
-<!-- Photo 2 -->
+<div class="photo-card">
 
-<div class="photo-card" data-category="street">
+<img src="beach.jpeg" class="gallery-img">
 
-<img src="beach.jpeg" alt="Beach" class="gallery-img">
-
-<h3 class="photo-name">Beach View</h3>
+<h3>Beach View</h3>
 
 <p>₹199</p>
 
-<div class="photo-actions">
-
-<button class="like-btn">❤️ <span class="like-count">0</span></button>
-
-<a href="upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am=199&cu=INR">
-<button class="btn btn-buy">Buy Now</button>
-</a>
-
-<a href="beach.jpeg" download>
-<button class="btn">Download</button>
-</a>
+<button class="btn" onclick="openPayment('beach.jpeg',199)">Download</button>
 
 </div>
 
-</div>
 
-<!-- Photo 3 -->
+<div class="photo-card">
 
-<div class="photo-card" data-category="sunset">
+<img src="image2.jpeg" class="gallery-img">
 
-<img src="image2.jpeg" alt="Sunset" class="gallery-img">
-
-<h3 class="photo-name">Golden Sunset</h3>
+<h3>Golden Sunset</h3>
 
 <p>₹399</p>
 
-<div class="photo-actions">
-
-<button class="like-btn">❤️ <span class="like-count">0</span></button>
-
-<a href="upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am=399&cu=INR">
-<button class="btn btn-buy">Buy Now</button>
-</a>
-
-<a href="image2.jpeg" download>
-<button class="btn">Download</button>
-</a>
+<button class="btn" onclick="openPayment('image2.jpeg',399)">Download</button>
 
 </div>
 
-</div>
 
-<!-- Photo 4 -->
+<div class="photo-card">
 
-<div class="photo-card" data-category="travel">
+<img src="image3.jpeg" class="gallery-img">
 
-<img src="image3.jpeg" alt="Travel" class="gallery-img">
-
-<h3 class="photo-name">Travel View</h3>
+<h3>Travel View</h3>
 
 <p>₹499</p>
 
-<div class="photo-actions">
-
-<button class="like-btn">❤️ <span class="like-count">0</span></button>
-
-<a href="upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am=499&cu=INR">
-<button class="btn btn-buy">Buy Now</button>
-</a>
-
-<a href="image3.jpeg" download>
-<button class="btn">Download</button>
-</a>
+<button class="btn" onclick="openPayment('image3.jpeg',499)">Download</button>
 
 </div>
 
-</div>
 
-<!-- Photo 5 -->
+<div class="photo-card">
 
-<div class="photo-card" data-category="sunset">
+<img src="image4.jpeg" class="gallery-img">
 
-<img src="image4.jpeg" alt="Sunset" class="gallery-img">
-
-<h3 class="photo-name">Evening Sunset</h3>
+<h3>Evening Sunset</h3>
 
 <p>₹349</p>
 
-<div class="photo-actions">
-
-<button class="like-btn">❤️ <span class="like-count">0</span></button>
-
-<a href="upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am=349&cu=INR">
-<button class="btn btn-buy">Buy Now</button>
-</a>
-
-<a href="image4.jpeg" download>
-<button class="btn">Download</button>
-</a>
+<button class="btn" onclick="openPayment('image4.jpeg',349)">Download</button>
 
 </div>
 
-</div>
 
-<!-- Photo 6 -->
+<div class="photo-card">
 
-<div class="photo-card" data-category="sunset">
+<img src="sunset-street.jpeg" class="gallery-img">
 
-<img src="sunset-street.jpeg" alt="Street Sunset" class="gallery-img">
-
-<h3 class="photo-name">Street Sunset</h3>
+<h3>Street Sunset</h3>
 
 <p>₹199</p>
 
-<div class="photo-actions">
-
-<button class="like-btn">❤️ <span class="like-count">0</span></button>
-
-<a href="upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am=199&cu=INR">
-<button class="btn btn-buy">Buy Now</button>
-</a>
-
-<a href="sunset-street.jpeg" download>
-<button class="btn">Download</button>
-</a>
+<button class="btn" onclick="openPayment('sunset-street.jpeg',199)">Download</button>
 
 </div>
 
-</div>
 
 </div>
 
 </section>
 
-<!-- About -->
 
 <section id="about" class="about-section">
 
@@ -239,15 +156,14 @@
 <h2>About Me</h2>
 
 <p>
-Hi, I am Sai Deepak Raj, a passionate photographer who loves capturing beautiful moments through my camera.  
-This website shows my best photography work. I strive to turn fleeting moments into timeless memories.
+Hi, I am Sai Deepak Raj, a passionate photographer who loves capturing beautiful moments through my camera.
+This website shows my best photography work.
 </p>
 
 </div>
 
 </section>
 
-<!-- Contact -->
 
 <section id="contact" class="contact-section">
 
@@ -274,26 +190,83 @@ This website shows my best photography work. I strive to turn fleeting moments i
 
 </section>
 
-<!-- Footer -->
 
 <footer>
-<p>© 2026 Sai Deepak Raj Photography. All rights reserved.</p>
+
+<p>© 2026 Sai Deepak Raj Photography</p>
+
 </footer>
 
-<!-- Lightbox -->
 
-<div id="lightbox" class="lightbox">
-<span class="close">&times;</span>
-<img class="lightbox-img">
-</div>
 
-<!-- Floating WhatsApp -->
+<!-- PAYMENT POPUP -->
 
-<a href="https://wa.me/918074158967" class="whatsapp-float" target="_blank">
-<i class="fab fa-whatsapp"></i>
+<div id="paymentPopup" class="payment-popup">
+
+<div class="payment-box">
+
+<h2>Buy Photo</h2>
+
+<p id="photoPrice"></p>
+
+<a id="upiLink" target="_blank">
+
+<button class="btn">Pay with UPI</button>
+
 </a>
 
-<script src="script.js"></script>
+<br><br>
+
+<button onclick="confirmPayment()">I Paid</button>
+
+<br><br>
+
+<a id="downloadLink" style="display:none">
+
+<button class="btn">Download Photo</button>
+
+</a>
+
+<br><br>
+
+<button onclick="closePayment()">Cancel</button>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+function openPayment(image,price){
+
+document.getElementById("paymentPopup").style.display="flex"
+
+document.getElementById("photoPrice").innerText="Price ₹"+price
+
+document.getElementById("upiLink").href="upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am="+price+"&cu=INR"
+
+document.getElementById("downloadLink").href=image
+
+}
+
+
+function closePayment(){
+
+document.getElementById("paymentPopup").style.display="none"
+
+}
+
+
+function confirmPayment(){
+
+document.getElementById("downloadLink").style.display="block"
+
+}
+
+</script>
+
 
 </body>
 </html>
