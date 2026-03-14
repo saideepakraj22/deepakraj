@@ -66,6 +66,35 @@ lightbox.style.display="flex";
 lightboxImg.src=img.src;
 
 });
+  let selectedImage = "";
+
+function openPayment(image, price){
+
+selectedImage = image;
+
+document.getElementById("paymentPopup").style.display = "flex";
+
+document.getElementById("photoPrice").innerText =
+"Price: ₹" + price;
+
+document.getElementById("upiLink").href =
+"upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am="+price+"&cu=INR";
+
+document.getElementById("downloadLink").href = image;
+
+}
+
+function closePayment(){
+
+document.getElementById("paymentPopup").style.display = "none";
+
+}
+
+function confirmPayment(){
+
+document.getElementById("downloadLink").style.display = "block";
+
+}
 
 });
 
