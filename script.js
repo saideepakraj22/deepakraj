@@ -106,3 +106,12 @@ if (e.target.tagName === "IMG") {
 e.preventDefault();
 }
 });
+
+function openViewer(img){
+document.getElementById("imageViewer").style.display="flex"
+document.getElementById("viewerImg").src=img.src
+}
+
+function closeViewer(){
+document.getElementById("imageViewer").style.display="none"
+}
