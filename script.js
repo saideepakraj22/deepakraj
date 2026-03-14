@@ -101,3 +101,8 @@ document.getElementById("downloadLink").style.display = "block";
 closeBtn.onclick = () => {
 lightbox.style.display="none";
 }
+document.addEventListener("dragstart", function(e) {
+if (e.target.tagName === "IMG") {
+e.preventDefault();
+}
+});
