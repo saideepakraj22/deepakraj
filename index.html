@@ -327,6 +327,24 @@ count.innerText=parseInt(count.innerText)+1
 }
 
 </script>
+
+ <script>
+
+function openViewer(img){
+
+document.getElementById("imageViewer").style.display="flex"
+
+document.getElementById("viewerImg").src = img.src
+
+}
+
+function closeViewer(){
+
+document.getElementById("imageViewer").style.display="none"
+
+}
+
+</script>
   <script>
 document.addEventListener("contextmenu", function(e){
 e.preventDefault();
