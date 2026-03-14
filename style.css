@@ -263,3 +263,7 @@ text-align:center;
 width:300px;
 
 }
+img{
+pointer-events:none;
+user-select:none;
+}
