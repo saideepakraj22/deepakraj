@@ -1,422 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SDR Captures</title>
-
-<meta name="description" content="Photography portfolio of Sai Deepak Raj">
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
- /* IMAGE VIEWER STYLE */
-
-.image-viewer{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.image-viewer img{
-max-width:90%;
-max-height:90%;
-object-fit:contain;
-}
-
-.close-viewer{
-position:absolute;
-top:20px;
-right:30px;
-font-size:40px;
-color:white;
-cursor:pointer;
-}
-
-<style>
- .categories{
-text-align:center;
-margin:40px 0;
-}
-
-.categories button{
-background:#ff6b35;
-color:white;
-border:none;
-padding:10px 18px;
-margin:5px;
-font-size:16px;
-border-radius:25px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.categories button:hover{
-background:#ff3b00;
-}
-
-.categories button.active{
-background:#000;
-color:white;
-}
-
-.photo-actions{
-display:flex;
-gap:10px;
-margin-top:10px;
-align-items:center;
-}
-
-.like-btn{
-background:white;
-border:1px solid #ccc;
-padding:6px 10px;
-cursor:pointer;
-border-radius:6px;
-}
-
-.like-btn span{
-margin-left:5px;
-}
-
-.btn-buy{
-background:#000;
-color:white;
-border:none;
-padding:7px 12px;
-border-radius:6px;
-cursor:pointer;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<nav class="navbar">
-
-<div class="logo">SDR Captures</div>
-
-<ul class="nav-links">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SDR Captures</title><meta name="description" content="Photography portfolio of Sai Deepak Raj"><link rel="stylesheet" href="style.css"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></head><body><nav class="navbar"><div class="logo">SDR Captures</div><ul class="nav-links">
 <li><a href="#home">Home</a></li>
 <li><a href="#gallery">Gallery</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
-</ul>
+</ul></nav><section id="home" class="hero"><div class="hero-overlay"></div><div class="hero-content"><h1>Photography by Sai Deepak Raj</h1>
+<p>Capturing beautiful moments through my lens</p><a href="#gallery" class="btn btn-primary">View Gallery</a>
 
-</nav>
+</div></section><div class="categories"><button onclick="filterPhotos('all')">All</button>
+<button onclick="filterPhotos('sunset')">Sunset</button>
+<button onclick="filterPhotos('nature')">Nature</button>
+<button onclick="filterPhotos('street')">Street Photography</button>
 
+</div><section id="gallery" class="gallery-section"><div class="gallery-container"><!-- PHOTO 1 --><div class="photo-card" data-category="nature"><img src="image1.jpeg" class="gallery-img" onclick="openViewer(this)"><h3>Nature Beauty</h3><p>₹199</p><div class="photo-actions"><button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
 
-<section id="home" class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<h1>Photography by Sai Deepak Raj</h1>
-<p>Capturing beautiful moments through my lens</p>
-
-<a href="#gallery" class="btn btn-primary">View Gallery</a>
-
-</div>
-
-</section>
- <div class="categories">
-
-<button class="active" onclick="filterPhotos('all', this)">All</button>
-
-<button onclick="filterPhotos('sunset', this)">Sunset</button>
-
-<button onclick="filterPhotos('nature', this)">Nature</button>
-
-<button onclick="filterPhotos('street', this)">Street Photography</button>
-
-</div>
-
-<section id="gallery" class="gallery-section">
-
-<div class="gallery-container">
-
-
-<!-- PHOTO 1 -->
- <div class="photo-card" data-category="nature">
-
-<img src="image1.jpeg" class="gallery-img"
- onclick="openViewer(this)">
-
-<h3>Nature Beauty</h3>
-
-<p>₹199</p>
-
-<div class="photo-actions">
-
-<button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
-
-<a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Nature%20Beauty%20for%20₹299" target="_blank">
+<a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Nature%20Beauty%20for%20₹199" target="_blank">
 <button class="btn-buy">Buy Now</button>
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PHOTO 2 -->
-
-<div class="photo-card" data-category="nature">
-
-<img src="beach.jpeg" class="gallery-img"
-  onclick="openViewer(this)">
-
-
-<h3>Beach View</h3>
-
-<p>₹199</p>
-
-<div class="photo-actions">
-
-<button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
+</a></div></div><!-- PHOTO 2 --><div class="photo-card" data-category="nature"><img src="beach.jpeg" class="gallery-img" onclick="openViewer(this)"><h3>Beach View</h3><p>₹199</p><div class="photo-actions"><button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
 
 <a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Beach%20View%20for%20₹199" target="_blank">
 <button class="btn-buy">Buy Now</button>
-</a>
+</a></div></div><!-- PHOTO 3 --><div class="photo-card" data-category="street"><img src="image2.jpeg" class="gallery-img" onclick="openViewer(this)"><h3>Cute Puppy</h3><p>₹199</p><div class="photo-actions"><button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
 
-</div>
-
-</div>
-
-
-<!-- PHOTO 3 -->
-
-<div class="photo-card" data-category="street photography">
-
-<img src="image2.jpeg" class="gallery-img"
- onclick="openViewer(this)">
-
-
-<h3>Cute Puppy</h3>
-
-<p>₹199</p>
-
-<div class="photo-actions">
-
-<button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
-
-<a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Golden%20Sunset%20for%20₹399" target="_blank">
+<a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Cute%20Puppy%20for%20₹199" target="_blank">
 <button class="btn-buy">Buy Now</button>
-</a>
+</a></div></div><!-- PHOTO 4 --><div class="photo-card" data-category="nature"><img src="image3.jpeg" class="gallery-img" onclick="openViewer(this)"><h3>Travel View</h3><p>₹199</p><div class="photo-actions"><button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
 
-</div>
-
-</div>
-
-
-<!-- PHOTO 4 -->
-
-<div class="photo-card" data-category="nature">
-
-<img src="image3.jpeg" class="gallery-img" 
- onclick="openViewer(this)">
-
-
-<h3>Travel View</h3>
-
-<p>₹199</p>
-
-<div class="photo-actions">
-
-<button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
-
-<a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Travel%20View%20for%20₹499" target="_blank">
+<a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Travel%20View%20for%20₹199" target="_blank">
 <button class="btn-buy">Buy Now</button>
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PHOTO 5 -->
-
-<div class="photo-card" data-category="sunset">
-
-<img src="image4.jpeg" class="gallery-img"
- onclick="openViewer(this)">
-
-
-<h3>Evening Sunset</h3>
-
-<p>₹349</p>
-
-<div class="photo-actions">
-
-<button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
+</a></div></div><!-- PHOTO 5 --><div class="photo-card" data-category="sunset"><img src="image4.jpeg" class="gallery-img" onclick="openViewer(this)"><h3>Evening Sunset</h3><p>₹349</p><div class="photo-actions"><button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
 
 <a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Evening%20Sunset%20for%20₹349" target="_blank">
 <button class="btn-buy">Buy Now</button>
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PHOTO 6 -->
-
-<div class="photo-card" data-category="sunset">
-
-<img src="sunset-street.jpeg" class="gallery-img"
- onclick="openViewer(this)">
-
-
-<h3>Street Sunset</h3>
-
-<p>₹199</p>
-
-<div class="photo-actions">
-
-<button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
+</a></div></div><!-- PHOTO 6 --><div class="photo-card" data-category="sunset"><img src="sunset-street.jpeg" class="gallery-img" onclick="openViewer(this)"><h3>Street Sunset</h3><p>₹199</p><div class="photo-actions"><button class="like-btn" onclick="likePhoto(this)">❤️ <span>0</span></button>
 
 <a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Street%20Sunset%20for%20₹199" target="_blank">
 <button class="btn-buy">Buy Now</button>
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<section id="about" class="about-section">
-
-<div class="about-content">
-
-<h2>About Me</h2>
-
-<p>
+</a></div></div></div></section><section id="about" class="about-section"><h2>About Me</h2><p>
 Hi, I am Sai Deepak Raj, a passionate photographer who loves capturing beautiful moments through my camera.
-</p>
-
-</div>
-
-</section>
-
-
-<section id="contact" class="contact-section">
-
-<h2>Get In Touch</h2>
-
-<div class="contact-links">
-
-<a href="mailto:saideepakraj22@gmail.com" class="contact-card">
+</p></section><section id="contact" class="contact-section"><h2>Get In Touch</h2><div class="contact-links"><a href="mailto:saideepakraj22@gmail.com" class="contact-card">
 <i class="fas fa-envelope"></i>
 <span>Email Me</span>
-</a>
-
-<a href="https://www.instagram.com/saideepakraj_gajwinkar" target="_blank" class="contact-card">
+</a><a href="https://www.instagram.com/saideepakraj_gajwinkar" target="_blank" class="contact-card">
 <i class="fab fa-instagram"></i>
 <span>Instagram</span>
-</a>
-
-<a href="https://wa.me/918074158967" target="_blank" class="contact-card whatsapp">
+</a><a href="https://wa.me/918074158967" target="_blank" class="contact-card whatsapp">
 <i class="fab fa-whatsapp"></i>
 <span>WhatsApp</span>
-</a>
-
-</div>
-
-</section>
-
-
-<footer>
+</a></div></section><footer>
 <p>© 2026 Sai Deepak Raj Photography</p>
-</footer>
-
-
-<script>
+</footer><!-- IMAGE VIEWER --><div id="imageViewer" class="image-viewer">
+<span class="close-viewer" onclick="closeViewer()">&times;</span>
+<img id="viewerImg">
+</div><script>
 
 function likePhoto(btn){
-
-let count=btn.querySelector("span")
-
-count.innerText=parseInt(count.innerText)+1
-
+let count = btn.querySelector("span")
+count.innerText = parseInt(count.innerText) + 1
 }
 
-</script>
-
- <script>
-
 function openViewer(img){
-
 document.getElementById("imageViewer").style.display="flex"
-
 document.getElementById("viewerImg").src = img.src
-
 }
 
 function closeViewer(){
-
 document.getElementById("imageViewer").style.display="none"
-
 }
 
-</script>
-  <script>
-document.addEventListener("contextmenu", function(e){
-e.preventDefault();
-alert("Right click is disabled on this website");
-});
-</script>
-
- <script>
-
 function filterPhotos(category){
-
 let photos = document.querySelectorAll(".photo-card")
 
 photos.forEach(function(photo){
 
 if(category === "all"){
-photo.style.display = "block"
+photo.style.display="block"
 }
 
 else if(photo.dataset.category === category){
-photo.style.display = "block"
+photo.style.display="block"
 }
 
 else{
-photo.style.display = "none"
+photo.style.display="none"
 }
 
 })
-
 }
 
-</script>
- 
- <div id="imageViewer" class="image-viewer">
-<span class="close-viewer" onclick="closeViewer()">&times;</span>
-<img id="viewerImg">
-</div>
+document.addEventListener("contextmenu", function(e){
+e.preventDefault()
+alert("Right click is disabled on this website")
+})
 
-
-</body>
+</script></body>
 </html>
