@@ -56,17 +56,19 @@ document.addEventListener("contextmenu", function(e){
 });
 
 // Filter Photos
-function filterPhotos(category){
+function filterPhotos(category, btn){
     let photos = document.querySelectorAll(".photo-card");
     photos.forEach(function(photo){
-        if(category === "all"){
-            photo.style.display="block";
-        }
-        else if(photo.dataset.category === category){
-            photo.style.display="block";
-        }
-        else{
-            photo.style.display="none";
+        if(category === "all" || photo.dataset.category === category){
+            photo.style.display = "block";
+        } else {
+            photo.style.display = "none";
         }
     });
+
+    // Remove active class from all buttons
+    document.querySelectorAll('.categories button').forEach(b => b.classList.remove('active'));
+
+    // Add active class to clicked button
+    if(btn) btn.classList.add('active');
 }
