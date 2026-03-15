@@ -73,6 +73,11 @@ body{
     border-radius:25px;
     cursor:pointer;
 }
+/* Active category button highlight */
+.categories button.active {
+    background: #111;  /* dark background to show active */
+    color: #fff;       /* white text */
+}
 
 .gallery-container{
     display:grid;
