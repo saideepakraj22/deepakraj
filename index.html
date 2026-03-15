@@ -82,6 +82,7 @@
 
 <section id="gallery" class="gallery-section">
 <div class="gallery-container">
+
     <!-- PHOTO 1 -->
     <div class="photo-card" data-category="nature">
         <img src="image1.jpeg" class="gallery-img" onclick="openViewer(this)">
@@ -94,6 +95,7 @@
             </a>
         </div>
     </div>
+
     <!-- PHOTO 2 -->
     <div class="photo-card" data-category="nature">
         <img src="beach.jpeg" class="gallery-img" onclick="openViewer(this)">
@@ -106,6 +108,7 @@
             </a>
         </div>
     </div>
+
     <!-- PHOTO 3 -->
     <div class="photo-card" data-category="street">
         <img src="image2.jpeg" class="gallery-img" onclick="openViewer(this)">
@@ -118,7 +121,46 @@
             </a>
         </div>
     </div>
-    <!-- Repeat similarly for other photos -->
+
+    <!-- PHOTO 4 -->
+    <div class="photo-card" data-category="nature">
+        <img src="image3.jpeg" class="gallery-img" onclick="openViewer(this)">
+        <h3>Travel View</h3>
+        <p>₹199</p>
+        <div class="photo-actions">
+            <button class="like-btn" onclick="likePhoto(this)">❤️ <span data-count="0">0</span></button>
+            <a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Travel%20View%20for%20₹199" target="_blank">
+                <button class="btn-buy">Buy Now</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- PHOTO 5 -->
+    <div class="photo-card" data-category="sunset">
+        <img src="image4.jpeg" class="gallery-img" onclick="openViewer(this)">
+        <h3>Evening Sunset</h3>
+        <p>₹349</p>
+        <div class="photo-actions">
+            <button class="like-btn" onclick="likePhoto(this)">❤️ <span data-count="0">0</span></button>
+            <a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Evening%20Sunset%20for%20₹349" target="_blank">
+                <button class="btn-buy">Buy Now</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- PHOTO 6 -->
+    <div class="photo-card" data-category="sunset">
+        <img src="sunset-street.jpeg" class="gallery-img" onclick="openViewer(this)">
+        <h3>Street Sunset</h3>
+        <p>₹199</p>
+        <div class="photo-actions">
+            <button class="like-btn" onclick="likePhoto(this)">❤️ <span data-count="0">0</span></button>
+            <a href="https://wa.me/918074158967?text=Hi%20Sai%20Deepak%20Raj%2C%20I%20want%20to%20buy%20your%20photo%20Street%20Sunset%20for%20₹199" target="_blank">
+                <button class="btn-buy">Buy Now</button>
+            </a>
+        </div>
+    </div>
+
 </div>
 </section>
 
@@ -151,10 +193,8 @@
 function likePhoto(btn){
     let countSpan = btn.querySelector("span");
     
-    // Initialize liked state
     if(!btn.dataset.liked) btn.dataset.liked = "false";
 
-    // Get raw count
     let count = parseInt(countSpan.dataset.count);
 
     if(btn.dataset.liked === "false"){
@@ -167,14 +207,10 @@ function likePhoto(btn){
         btn.classList.remove("liked");
     }
 
-    // Store raw count
     countSpan.dataset.count = count;
-
-    // Update displayed count
     countSpan.innerText = formatLikes(count);
 }
 
-// Format numbers like Instagram
 function formatLikes(num){
     if(num < 1000) return num;
     else if(num < 1000000) return (num/1000).toFixed(1).replace('.0','') + 'K';
