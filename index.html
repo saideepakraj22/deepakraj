@@ -1,21 +1,58 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SDR Captures</title>
-
 <meta name="description" content="Photography portfolio of Sai Deepak Raj">
-
 <link rel="stylesheet" href="style.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* HERO BANNER */
+.hero{
+    background:url("banner.png") top center/cover no-repeat;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    text-align:center;
+    color:white;
+}
 
+/* DARK OVERLAY */
+.hero-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+}
+
+/* HERO CONTENT */
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+/* PROFESSIONAL TITLE FONT */
+.hero-content h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-shadow:0px 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero-content p{
+    font-family:'Montserrat', sans-serif;
+    font-size:20px;
+    margin-top:10px;
+}
+</style>
 </head>
-
 <body>
 
 <nav class="navbar">
