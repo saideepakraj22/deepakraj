@@ -1,3 +1,5 @@
+// PHOTO CATEGORY FILTER
+
 const filterButtons = document.querySelectorAll(".filter-btn");
 const photos = document.querySelectorAll(".photo-card");
 
@@ -10,13 +12,10 @@ let filter = button.getAttribute("data-filter");
 photos.forEach(photo => {
 
 if(filter === "all" || photo.getAttribute("data-category") === filter){
-
 photo.style.display = "block";
-
-}else{
-
+}
+else{
 photo.style.display = "none";
-
 }
 
 });
@@ -24,7 +23,9 @@ photo.style.display = "none";
 });
 
 });
-// Like system with counter
+
+
+// LIKE SYSTEM WITH SAVED COUNT
 
 document.querySelectorAll(".photo-card").forEach((card,index)=>{
 
@@ -51,7 +52,8 @@ localStorage.setItem("photoLikes"+index,count);
 
 });
 
-// Lightbox Photo Viewer
+
+// LIGHTBOX PHOTO VIEWER
 
 const images = document.querySelectorAll(".gallery-img");
 const lightbox = document.getElementById("lightbox");
@@ -63,10 +65,22 @@ images.forEach(img => {
 img.addEventListener("click", () => {
 
 lightbox.style.display="flex";
-lightboxImg.src=img.src;
+lightboxImg.src = img.src;
 
 });
-  let selectedImage = "";
+
+});
+
+if(closeBtn){
+closeBtn.onclick = () => {
+lightbox.style.display="none";
+}
+}
+
+
+// PAYMENT SYSTEM
+
+let selectedImage = "";
 
 function openPayment(image, price){
 
@@ -96,22 +110,29 @@ document.getElementById("downloadLink").style.display = "block";
 
 }
 
-});
 
-closeBtn.onclick = () => {
-lightbox.style.display="none";
-}
-document.addEventListener("dragstart", function(e) {
-if (e.target.tagName === "IMG") {
-e.preventDefault();
-}
-});
+// INSTAGRAM STYLE IMAGE VIEWER
 
 function openViewer(img){
-document.getElementById("imageViewer").style.display="flex"
-document.getElementById("viewerImg").src=img.src
+
+document.getElementById("imageViewer").style.display="flex";
+document.getElementById("viewerImg").src=img.src;
+
 }
 
 function closeViewer(){
-document.getElementById("imageViewer").style.display="none"
+
+document.getElementById("imageViewer").style.display="none";
+
 }
+
+
+// PREVENT IMAGE DRAG
+
+document.addEventListener("dragstart", function(e) {
+
+if (e.target.tagName === "IMG") {
+e.preventDefault();
+}
+
+});
