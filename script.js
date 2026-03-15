@@ -72,3 +72,22 @@ function filterPhotos(category, btn){
     // Add active class to clicked button
     if(btn) btn.classList.add('active');
 }
+
+function openPayment(name, price){
+
+document.getElementById("paymentPopup").style.display="flex"
+
+document.getElementById("photoName").innerText = name
+
+document.getElementById("photoPrice").innerText = "Price ₹"+price
+
+document.getElementById("whatsappLink").href =
+"https://wa.me/918074158967?text=Hi Sai Deepak Raj, I want to buy your photo "+name+" ₹"+price
+
+}
+
+function closePayment(){
+
+document.getElementById("paymentPopup").style.display="none"
+
+}
