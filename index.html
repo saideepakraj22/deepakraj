@@ -46,6 +46,31 @@ cursor:pointer;
 }
 
 <style>
+ .categories{
+text-align:center;
+margin:40px 0;
+}
+
+.categories button{
+background:#ff6b35;
+color:white;
+border:none;
+padding:10px 18px;
+margin:5px;
+font-size:16px;
+border-radius:25px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.categories button:hover{
+background:#ff3b00;
+}
+
+.categories button.active{
+background:#000;
+color:white;
+}
 
 .photo-actions{
 display:flex;
@@ -111,13 +136,13 @@ cursor:pointer;
 </section>
  <div class="categories">
 
-<button onclick="filterPhotos('all')">All</button>
+<button class="active" onclick="filterPhotos('all', this)">All</button>
 
-<button onclick="filterPhotos('sunset')">Sunset</button>
+<button onclick="filterPhotos('sunset', this)">Sunset</button>
 
-<button onclick="filterPhotos('nature')">Nature</button>
+<button onclick="filterPhotos('nature', this)">Nature</button>
 
-<button onclick="filterPhotos('street')">Street Photography</button>
+<button onclick="filterPhotos('street', this)">Street Photography</button>
 
 </div>
 
