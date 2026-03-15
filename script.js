@@ -1,138 +1,57 @@
-// PHOTO CATEGORY FILTER
+function likePhoto(btn){
 
-const filterButtons = document.querySelectorAll(".filter-btn");
-const photos = document.querySelectorAll(".photo-card");
+let count = btn.querySelector("span")
 
-filterButtons.forEach(button => {
-
-button.addEventListener("click", () => {
-
-let filter = button.getAttribute("data-filter");
-
-photos.forEach(photo => {
-
-if(filter === "all" || photo.getAttribute("data-category") === filter){
-photo.style.display = "block";
-}
-else{
-photo.style.display = "none";
-}
-
-});
-
-});
-
-});
-
-
-// LIKE SYSTEM WITH SAVED COUNT
-
-document.querySelectorAll(".photo-card").forEach((card,index)=>{
-
-let likeBtn = card.querySelector(".like-btn");
-let countSpan = card.querySelector(".like-count");
-
-let savedLikes = localStorage.getItem("photoLikes"+index);
-
-if(savedLikes){
-countSpan.innerText = savedLikes;
-}
-
-likeBtn.addEventListener("click",()=>{
-
-let count = parseInt(countSpan.innerText);
-
-count++;
-
-countSpan.innerText = count;
-
-localStorage.setItem("photoLikes"+index,count);
-
-});
-
-});
-
-
-// LIGHTBOX PHOTO VIEWER
-
-const images = document.querySelectorAll(".gallery-img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.querySelector(".lightbox-img");
-const closeBtn = document.querySelector(".close");
-
-images.forEach(img => {
-
-img.addEventListener("click", () => {
-
-lightbox.style.display="flex";
-lightboxImg.src = img.src;
-
-});
-
-});
-
-if(closeBtn){
-closeBtn.onclick = () => {
-lightbox.style.display="none";
-}
-}
-
-
-// PAYMENT SYSTEM
-
-let selectedImage = "";
-
-function openPayment(image, price){
-
-selectedImage = image;
-
-document.getElementById("paymentPopup").style.display = "flex";
-
-document.getElementById("photoPrice").innerText =
-"Price: ₹" + price;
-
-document.getElementById("upiLink").href =
-"upi://pay?pa=8074158967@upi&pn=SaiDeepakRaj&am="+price+"&cu=INR";
-
-document.getElementById("downloadLink").href = image;
+count.innerText = parseInt(count.innerText) + 1
 
 }
-
-function closePayment(){
-
-document.getElementById("paymentPopup").style.display = "none";
-
-}
-
-function confirmPayment(){
-
-document.getElementById("downloadLink").style.display = "block";
-
-}
-
-
-// INSTAGRAM STYLE IMAGE VIEWER
 
 function openViewer(img){
 
-document.getElementById("imageViewer").style.display="flex";
-document.getElementById("viewerImg").src=img.src;
+document.getElementById("imageViewer").style.display="flex"
+
+document.getElementById("viewerImg").src = img.src
 
 }
 
 function closeViewer(){
 
-document.getElementById("imageViewer").style.display="none";
+document.getElementById("imageViewer").style.display="none"
 
 }
 
+document.addEventListener("contextmenu", function(e){
 
-// PREVENT IMAGE DRAG
+e.preventDefault()
 
-document.addEventListener("dragstart", function(e) {
+alert("Right click is disabled on this website")
 
-if (e.target.tagName === "IMG") {
-e.preventDefault();
+})
+
+function filterPhotos(category){
+
+let photos = document.querySelectorAll(".photo-card")
+
+photos.forEach(function(photo){
+
+if(category === "all"){
+
+photo.style.display = "block"
+
 }
 
-});
+else if(photo.dataset.category === category){
+
+photo.style.display = "block"
+
+}
+
+else{
+
+photo.style.display = "none"
+
+}
+
+})
+
+}
