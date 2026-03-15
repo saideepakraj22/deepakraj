@@ -76,7 +76,7 @@ body{
 /* Active category button highlight */
 .categories button.active {
     background: #111;  /* dark background to show active */
-    color: #fff;       /* white text */
+    color: #black;       /* white text */
 }
 
 .gallery-container{
