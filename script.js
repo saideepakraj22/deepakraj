@@ -2,26 +2,33 @@
 function likePhoto(btn){
     let countSpan = btn.querySelector("span");
     
-    // Get raw count (stored in data-count) or initialize
-    let count = parseInt(countSpan.dataset.count || countSpan.innerText);
+    // Initialize raw count in data attribute if not set
+    if(!countSpan.dataset.count){
+        countSpan.dataset.count = countSpan.innerText;
+    }
     
-    // Check if user already liked this photo
-    let liked = btn.dataset.liked === "true";
-
-    if(!liked){
-        count += 1;             // Add like
-        btn.dataset.liked = "true";  // Mark as liked
-        btn.classList.add("liked");  // Heart pop animation
-    } else {
-        count -= 1;             // Remove like
-        btn.dataset.liked = "false"; // Unmark liked
-        btn.classList.remove("liked"); // Remove animation
+    let count = parseInt(countSpan.dataset.count);
+    
+    // Initialize liked state if not set
+    if(!btn.dataset.liked){
+        btn.dataset.liked = "false";
     }
 
-    // Store raw count in data attribute
+    // Toggle like
+    if(btn.dataset.liked === "false"){
+        count += 1;
+        btn.dataset.liked = "true";
+        btn.classList.add("liked"); // Heart animation
+    } else {
+        count -= 1;
+        btn.dataset.liked = "false";
+        btn.classList.remove("liked");
+    }
+
+    // Update raw count
     countSpan.dataset.count = count;
 
-    // Update displayed number with Instagram-style formatting
+    // Update displayed number with Instagram-like formatting
     countSpan.innerText = formatLikes(count);
 }
 
