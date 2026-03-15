@@ -109,7 +109,17 @@ cursor:pointer;
 </div>
 
 </section>
+ <div class="categories">
 
+<button onclick="filterPhotos('all')">All</button>
+
+<button onclick="filterPhotos('sunset')">Sunset</button>
+
+<button onclick="filterPhotos('nature')">Nature</button>
+
+<button onclick="filterPhotos('street')">Street Photography</button>
+
+</div>
 
 <section id="gallery" class="gallery-section">
 
@@ -117,8 +127,7 @@ cursor:pointer;
 
 
 <!-- PHOTO 1 -->
-
-<div class="photo-card">
+ <div class="photo-card" data-category="nature">
 
 <img src="image1.jpeg" class="gallery-img"
  onclick="openViewer(this)">
@@ -142,7 +151,7 @@ cursor:pointer;
 
 <!-- PHOTO 2 -->
 
-<div class="photo-card">
+<div class="photo-card" data-category="nature">
 
 <img src="beach.jpeg" class="gallery-img"
   onclick="openViewer(this)">
@@ -167,7 +176,7 @@ cursor:pointer;
 
 <!-- PHOTO 3 -->
 
-<div class="photo-card">
+<div class="photo-card" data-category="street photography">
 
 <img src="image2.jpeg" class="gallery-img"
  onclick="openViewer(this)">
@@ -192,7 +201,7 @@ cursor:pointer;
 
 <!-- PHOTO 4 -->
 
-<div class="photo-card">
+<div class="photo-card" data-category="nature">
 
 <img src="image3.jpeg" class="gallery-img" 
  onclick="openViewer(this)">
@@ -217,7 +226,7 @@ cursor:pointer;
 
 <!-- PHOTO 5 -->
 
-<div class="photo-card">
+<div class="photo-card" data-category="sunset">
 
 <img src="image4.jpeg" class="gallery-img"
  onclick="openViewer(this)">
@@ -242,7 +251,7 @@ cursor:pointer;
 
 <!-- PHOTO 6 -->
 
-<div class="photo-card">
+<div class="photo-card" data-category="sunset">
 
 <img src="sunset-street.jpeg" class="gallery-img"
  onclick="openViewer(this)">
@@ -350,6 +359,32 @@ document.addEventListener("contextmenu", function(e){
 e.preventDefault();
 alert("Right click is disabled on this website");
 });
+</script>
+
+ <script>
+
+function filterPhotos(category){
+
+let photos = document.querySelectorAll(".photo-card")
+
+photos.forEach(function(photo){
+
+if(category === "all"){
+photo.style.display = "block"
+}
+
+else if(photo.dataset.category === category){
+photo.style.display = "block"
+}
+
+else{
+photo.style.display = "none"
+}
+
+})
+
+}
+
 </script>
   
   <!-- IMAGE VIEWER -->
