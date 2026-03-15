@@ -181,3 +181,13 @@ font-size:40px;
 color:white;
 cursor:pointer;
 }
+
+/* Heart pop animation for like button */
+.like-btn{
+    transition: transform 0.2s ease;
+}
+
+.like-btn.liked{
+    transform: scale(1.5);
+    color: #ff2d55; /* Instagram-like red */
+}
