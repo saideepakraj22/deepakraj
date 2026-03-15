@@ -1,9 +1,25 @@
 function likePhoto(btn){
+    let countSpan = btn.querySelector("span");
+    let count = parseInt(countSpan.dataset.count || countSpan.innerText);
 
-let count = btn.querySelector("span")
+    count += 1; // Increment like
 
-count.innerText = parseInt(count.innerText) + 1
+    // Store count in data attribute so we always know the raw number
+    countSpan.dataset.count = count;
 
+    // Format number like Instagram
+    countSpan.innerText = formatLikes(count);
+
+    // Animate heart
+    btn.classList.add("liked");
+    setTimeout(()=> btn.classList.remove("liked"), 500);
+}
+
+// Format numbers like Instagram: 1K, 1.2M
+function formatLikes(num){
+    if(num < 1000) return num;
+    else if(num < 1000000) return (num/1000).toFixed(1).replace('.0','') + 'K';
+    else return (num/1000000).toFixed(1).replace('.0','') + 'M';
 }
 
 function openViewer(img){
