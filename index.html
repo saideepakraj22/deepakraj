@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,10 +8,10 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
-/* HERO BANNER */
 .hero{
-    background:url("banner.png") top center/cover no-repeat;
+    background:url("banner.png") center/cover no-repeat;
     height:90vh;
     display:flex;
     align-items:center;
@@ -21,7 +21,6 @@
     color:white;
 }
 
-/* DARK OVERLAY */
 .hero-overlay{
     position:absolute;
     top:0;
@@ -31,28 +30,22 @@
     background:rgba(0,0,0,0.45);
 }
 
-/* HERO CONTENT */
 .hero-content{
     position:relative;
     z-index:2;
 }
 
-/* PROFESSIONAL TITLE FONT */
 .hero-content h1{
     font-family:'Playfair Display', serif;
     font-size:60px;
-    font-weight:700;
-    letter-spacing:2px;
-    text-shadow:0px 4px 20px rgba(0,0,0,0.8);
 }
 
 .hero-content p{
-    font-family:'Montserrat', sans-serif;
     font-size:20px;
-    margin-top:10px;
 }
 </style>
 </head>
+
 <body>
 
 <nav class="navbar">
@@ -64,51 +57,34 @@
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </nav>
 
-
 <section id="home" class="hero">
-
 <div class="hero-overlay"></div>
 
 <div class="hero-content">
-
 <h1>Captured Moments by Sai Deepak Raj</h1>
-
 <p>Capturing beautiful moments through my lens</p>
-
 <a href="#gallery" class="btn btn-primary">View Gallery</a>
-
 </div>
-
 </section>
 
-
 <div class="categories">
-
 <button onclick="filterPhotos('all',this)">All</button>
-
 <button onclick="filterPhotos('sunset',this)">Sunset</button>
-
 <button onclick="filterPhotos('nature',this)">Nature</button>
-
 <button onclick="filterPhotos('street',this)">Street Photography</button>
-
 </div>
-
 
 <section id="gallery" class="gallery-section">
- <div class="image-container" onclick="showWatermark(this)">
-    <img src="images/photo1.jpg" alt="photo">
-    <span class="watermark">Captured Moments © Sai Deepak Raj</span>
-</div>
-
 <div class="gallery-container">
 
 <!-- PHOTO 1 -->
 <div class="photo-card" data-category="nature">
-<img src="image1.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image1.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Nature Beauty</h3>
 <p>₹149</p>
 <div class="photo-actions">
@@ -119,7 +95,10 @@
 
 <!-- PHOTO 2 -->
 <div class="photo-card" data-category="nature">
-<img src="beach.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="beach.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Beach View</h3>
 <p>₹149</p>
 <div class="photo-actions">
@@ -130,7 +109,10 @@
 
 <!-- PHOTO 3 -->
 <div class="photo-card" data-category="street">
-<img src="image2.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image2.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Cute Puppy</h3>
 <p>₹199</p>
 <div class="photo-actions">
@@ -141,7 +123,10 @@
 
 <!-- PHOTO 4 -->
 <div class="photo-card" data-category="nature">
-<img src="image3.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image3.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Travel View</h3>
 <p>₹199</p>
 <div class="photo-actions">
@@ -152,7 +137,10 @@
 
 <!-- PHOTO 5 -->
 <div class="photo-card" data-category="sunset">
-<img src="image4.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image4.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Evening Sunset</h3>
 <p>₹149</p>
 <div class="photo-actions">
@@ -163,7 +151,10 @@
 
 <!-- PHOTO 6 -->
 <div class="photo-card" data-category="sunset">
-<img src="sunset-street.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="sunset-street.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Street Sunset</h3>
 <p>₹199</p>
 <div class="photo-actions">
@@ -174,7 +165,10 @@
 
 <!-- PHOTO 7 -->
 <div class="photo-card" data-category="sunset">
-<img src="image7.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image7.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Cloud Fire</h3>
 <p>₹199</p>
 <div class="photo-actions">
@@ -185,7 +179,10 @@
 
 <!-- PHOTO 8 -->
 <div class="photo-card" data-category="sunset">
-<img src="image8.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image8.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Golden Mist</h3>
 <p>₹199</p>
 <div class="photo-actions">
@@ -196,7 +193,10 @@
 
 <!-- PHOTO 9 -->
 <div class="photo-card" data-category="sunset">
-<img src="image9.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image9.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Blue Haven</h3>
 <p>₹199</p>
 <div class="photo-actions">
@@ -207,7 +207,10 @@
 
 <!-- PHOTO 10 -->
 <div class="photo-card" data-category="sunset">
-<img src="image10.jpeg" class="gallery-img" onclick="openViewer(this)">
+<div class="image-container" onclick="showWatermark(this)">
+<img src="image10.jpeg">
+<span class="watermark">Captured Moments © Sai Deepak Raj</span>
+</div>
 <h3>Calm Clouds</h3>
 <p>₹199</p>
 <div class="photo-actions">
@@ -216,6 +219,7 @@
 </div>
 </div>
 
+</div>
 </section>
 
 
@@ -322,22 +326,17 @@ The picture will be sent directly to your WhatsApp after payment.
 </div>
 
 </div>
+ <script src="script.js"></script>
 
-
-
-<script src="script.js"></script>
- <script>
+<script>
 function showWatermark(container) {
     let watermark = container.querySelector(".watermark");
-
-    if (watermark.style.opacity == "1") {
-        watermark.style.opacity = "0";
-    } else {
-        watermark.style.opacity = "1";
-    }
+    watermark.style.opacity = (watermark.style.opacity == "1") ? "0" : "1";
 }
 </script>
 
 </body>
-
 </html>
+
+
+
