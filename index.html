@@ -353,6 +353,49 @@ document.addEventListener("keydown", function(e) {
 });
 </script>
 
+
+
+
+    <script>
+function toggleLike(btn) {
+    const card = btn.closest(".photo-card");
+    const id = card.getAttribute("data-id");
+
+    const countSpan = btn.nextElementSibling;
+    let count = parseInt(countSpan.innerText);
+
+    let liked = localStorage.getItem("liked_" + id);
+
+    if (liked === "true") {
+        count = count - 1;
+        btn.classList.remove("liked");
+        btn.innerText = "❤️";
+        localStorage.setItem("liked_" + id, "false");
+    } else {
+        count = count + 1;
+        btn.classList.add("liked");
+        btn.innerText = "💖";
+        localStorage.setItem("liked_" + id, "true");
+    }
+
+    countSpan.innerText = count;
+}
+
+window.addEventListener("load", () => {
+    document.querySelectorAll(".photo-card").forEach(card => {
+        const id = card.getAttribute("data-id");
+        const btn = card.querySelector(".like-btn");
+
+        let liked = localStorage.getItem("liked_" + id);
+
+        if (liked === "true") {
+            btn.classList.add("liked");
+            btn.innerText = "💖";
+        }
+    });
+});
+</script>
+
 </body>
 </html>
 
